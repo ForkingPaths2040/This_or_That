@@ -38,7 +38,7 @@ https://developers.zomato.com/api/v2.1/cuisines?city_id=278
 
 ## Wireframes
 
-
+https://github.com/ForkingPaths2040/This_or_That/blob/master/Wireframe%20P1.png
 
 #### MVP 
 
@@ -67,7 +67,7 @@ https://developers.zomato.com/api/v2.1/cuisines?city_id=278
 
 ## Priority Matrix
 
-Time and Priority Matrix.pdf 
+https://github.com/ForkingPaths2040/This_or_That/blob/master/Time%20and%20Priority%20Matrix.pdf 
 
 ## Timeframes
 
