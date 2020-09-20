@@ -67,7 +67,7 @@ https://developers.zomato.com/api/v2.1/cuisines?city_id=278
 
 ## Priority Matrix
 
-
+Time and Priority Matrix.pdf 
 
 ## Timeframes
 
