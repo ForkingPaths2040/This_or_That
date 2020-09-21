@@ -3,38 +3,44 @@ Project 1 for GA's SEI
 
 ## Project Description
 
-The app will capture Zomato's API to retrieve restaurants by filtering through cuisine types. Two restaurants will be listed each time to help the user narrow down where they will decide to eat. They will pick either this or that. The previous decicison will remain until the next this or that knocks it out of the running. There will be a limited number of retievals so the user gets it's final decision quickly. 
+The app will capture Zomato's API to retrieve restaurants by filtering through location. Two restaurants will be listed each time to help the user narrow down where they will decide to eat. They will pick either this or that. The previous decicison will remain until the next this or that knocks it out of the running. There will be a limited number of retievals so the user gets it's final decision quickly. 
 
 ## API and Data Sample
 
-https://developers.zomato.com/api/v2.1/cuisines?city_id=278
+https://developers.zomato.com/api/v2.1/cities?q=Austin%2C%20TX
 
 {
-  "cuisines": [
+  "location_suggestions": [
     {
-      "cuisine": {
-        "cuisine_id": 152,
-        "cuisine_name": "African"
-      }
+      "id": 278,
+      "name": "Austin, TX",
+      "country_id": 216,
+      "country_name": "United States",
+      "country_flag_url": "https://b.zmtcdn.com/images/countries/flags/country_216.png",
+      "should_experiment_with": 0,
+      "has_go_out_tab": 0,
+      "discovery_enabled": 1,
+      "has_new_ad_format": 0,
+      "is_state": 0,
+      "state_id": 111,
+      "state_name": "Texas",
+      "state_code": "TX"
     },
     {
-      "cuisine": {
-        "cuisine_id": 1,
-        "cuisine_name": "American"
-      }
+      "id": 6434,
+      "name": "Port Austin, MI",
+      "country_id": 216,
+      "country_name": "United States",
+      "country_flag_url": "https://b.zmtcdn.com/images/countries/flags/country_216.png",
+      "should_experiment_with": 0,
+      "has_go_out_tab": 0,
+      "discovery_enabled": 0,
+      "has_new_ad_format": 0,
+      "is_state": 0,
+      "state_id": 90,
+      "state_name": "Michigan",
+      "state_code": "MI"
     },
-    {
-      "cuisine": {
-        "cuisine_id": 151,
-        "cuisine_name": "Argentine"
-      }
-    },
-    {
-      "cuisine": {
-        "cuisine_id": 3,
-        "cuisine_name": "Asian"
-      }
-    }
 
 ## Wireframes
 
