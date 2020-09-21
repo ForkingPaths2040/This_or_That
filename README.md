@@ -29,6 +29,7 @@ https://developers.zomato.com/api/v2.1/cities?q=Austin%2C%20TX
     
 ## Wireframes
 
+![Wireframe P1.png]
 https://github.com/ForkingPaths2040/This_or_That/blob/master/Wireframe%20P1.png
 
 #### MVP 
