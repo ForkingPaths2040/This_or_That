@@ -58,6 +58,7 @@ https://github.com/ForkingPaths2040/This_or_That/blob/master/Wireframe%20P1.png
 
 ## Priority Matrix
 
+![Priority Matrix](https://github.com/ForkingPaths2040/This_or_That/blob/master/Time%20and%20Priority%20Matrix.pdf)
 https://github.com/ForkingPaths2040/This_or_That/blob/master/Time%20and%20Priority%20Matrix.pdf 
 
 ## Timeframes
