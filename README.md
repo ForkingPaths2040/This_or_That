@@ -74,13 +74,9 @@ https://github.com/ForkingPaths2040/This_or_That/blob/master/Time%20and%20Priori
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
+TBD  
 
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
-```
+
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.
+ TBD
