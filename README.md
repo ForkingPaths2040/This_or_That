@@ -50,9 +50,9 @@ https://github.com/ForkingPaths2040/This_or_That/blob/master/Wireframe%20P1.png
 |  Day | Deliverable | Status
 |---|---| ---|
 |Sept 18-21| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|Sept 21| Project Approval | Incomplete
-|Sept 22| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Sept 23| MVP | Incomplete
+|Sept 21| Project Approval / Touch files / Implement AuthKey / Basic HTML | Incomplete
+|Sept 22| Get Requests / Append to DOM | Incomplete
+|Sept 23| Finish MVP list | Incomplete
 |Sept 24| Post MVP/Styling | Incomplete
 |Sept 25| Presentations | Incomplete
 
