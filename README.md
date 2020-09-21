@@ -25,23 +25,8 @@ https://developers.zomato.com/api/v2.1/cities?q=Austin%2C%20TX
       "state_id": 111,
       "state_name": "Texas",
       "state_code": "TX"
-    },
-    {
-      "id": 6434,
-      "name": "Port Austin, MI",
-      "country_id": 216,
-      "country_name": "United States",
-      "country_flag_url": "https://b.zmtcdn.com/images/countries/flags/country_216.png",
-      "should_experiment_with": 0,
-      "has_go_out_tab": 0,
-      "discovery_enabled": 0,
-      "has_new_ad_format": 0,
-      "is_state": 0,
-      "state_id": 90,
-      "state_name": "Michigan",
-      "state_code": "MI"
-    },
-
+    }
+    
 ## Wireframes
 
 https://github.com/ForkingPaths2040/This_or_That/blob/master/Wireframe%20P1.png
