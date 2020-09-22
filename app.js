@@ -9,7 +9,7 @@
 
 // FUNCTION THAT WILL GET RESTAURANT OBJECTS AND APPEND TO DOM
 // ARGUMENTS: WHICH DIV CONTAINER AND WHICH DATA ARRAY TO USE
-async function getData(div, div2, arr) {
+async function getData() {
   try {
     const res = await axios({
       method: 'get',
@@ -18,52 +18,71 @@ async function getData(div, div2, arr) {
         'user-key': 'd2595947349326ccfb5c1ce5e27e77b2'
       }
     });
-
-    // VARIABLES
+    // STORED GET RESPONSE
     const response = res.data.restaurants
-    // console.log(response)
-    let first10 = response.slice(0, 10)
-    let randomFirst10 = first10[Math.floor(Math.random() * first10.length)]
-    let last10 = response.slice(10)
-    let randomLast10 = last10[Math.floor(Math.random() * last10.length)]
-    const leftBox = document.querySelector('#left')
-    const rightBox = document.querySelector('#right')
-    const leftListBox = document.querySelector('#leftListBox')
-    const rightListBox = document.querySelector('#rightListBox')
-
-    // NAME OF RESTAURANT
-    let name = document.createElement('h3')
-    name.textContent = `${arr.restaurant.name}`
-    div.appendChild(name)
-    // IMG OF RESTAURANT
-    let image = document.createElement('img')
-    image.src = arr.restaurant.featured_image
-    div.appendChild(image)
-    // CUISINE TYPE
-    let cuisine = document.createElement('li')
-    cuisine.innerHTML = `Cuisine : ${arr.restaurant.cuisines}`
-    div2.appendChild(cuisine)
-    // AVERAGE COST OF 2
-    let cost = document.createElement('li')
-    cost.innerHTML = `Average cost for 2: ${arr.restaurant.average_cost_for_two}`
-    div2.appendChild(cost)
-    // HOURS OF OPERATION
-    let timings = document.createElement('li')
-    timings.innerHTML = `Hours : ${arr.restaurant.timings}`
-    div2.appendChild(timings)
-
-
+    console.log(response)
+    // CALL FUNCTION TO PASS RESPONSE DATA
+    grabPortion(response)
 
   } catch (err) {
     console.error(err)
   }
 }
+let thisButton = document.querySelector('#leftThis')
+thisButton.addEventListener('click', grabPortion(data, 'right'))
+
+let thatButton = document.querySelector('#rightThat')
+thatButton.addEventListener('click', grabPortion(data, 'left'))
+
+
+
+// FUNCTION TO GRAB A PORTION OF 'RESPONSE' WHILE ALSO CALLING RENDERDATA
+function grabPortion(data, side) {
+  let leftRestaurant = data.shift()
+  let rightRestaurant = data.pop()
+  if ((data === leftRestaurant) && (side === 'left')) {
+    renderRestaurant(leftRestaurant, 'left')
+  } else if ((data === rightRestaurant) && (side === 'right')) {
+    renderRestaurant(rightRestaurant, 'right')
+  } else if (((data === leftRestaurant) || (data === rightRestaurant)) && (side === null)) {
+    renderRestaurant(leftRestaurant, 'left')
+    renderRestaurant(rightRestaurant, 'right')
+  }
+
+}
+
+// FUNCTION THAT TAKES CAPTURED DATA FROM STORED VARIABLE AND APPENDS TO DOM
+function renderRestaurant(restaurant, side) {
+  let box = document.querySelector(`#${side}`)
+
+  // NAME OF RESTAURANT
+  let name = document.createElement('h3')
+  name.textContent = `${restaurant.restaurant.name}`
+  box.appendChild(name)
+  // IMG OF RESTAURANT
+  let image = document.createElement('img')
+  image.src = restaurant.restaurant.featured_image
+  box.appendChild(image)
+
+  // CUISINE TYPE
+  let cuisine = document.createElement('li')
+  cuisine.innerHTML = `Cuisine : ${restaurant.restaurant.cuisines}`
+  box.appendChild(cuisine)
+  // AVERAGE COST OF 2
+  let cost = document.createElement('li')
+  cost.innerHTML = `Average cost for two: $${restaurant.restaurant.average_cost_for_two}`
+  box.appendChild(cost)
+  // HOURS OF OPERATION
+  let timings = document.createElement('li')
+  timings.innerHTML = `Hours : ${restaurant.restaurant.timings}`
+  box.appendChild(timings)
+}
 
 // AFTER EVENT LISTENER, THIS WOULD BE FUNCTION FOR 'THIS' BUTTON
-getData(rightBox, rightListBox, randomLast10)
+getData()
 
 // AFTER EVENT LISTENER, THIS WOULD BE FUNCTION FOR 'THAT' BUTTON
-getData(leftBox, leftListBox, randomFirst10)
+// getData()
 
 
 

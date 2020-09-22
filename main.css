@@ -1,7 +1,22 @@
+*{
+  margin:0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.main-container{
+  width: 1024px;
+  height: 768px;;
+  background-color: #ffd83d;
+}
 .box{
   display: inline-block;
 }
 
 .big-box{
   display: grid;
+}
+
+img{
+  max-width: 300px;
 }
