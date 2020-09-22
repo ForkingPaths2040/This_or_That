@@ -1,0 +1,7 @@
+.box{
+  display: inline-block;
+}
+
+.big-box{
+  display: grid;
+}
