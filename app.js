@@ -38,19 +38,19 @@ async function getData() {
 }
 
 
-// BEFORE RENDERRESTAURANT CODE IS SOLID -> PROGRESSING THROUGH CHECKING THE REST
+// GRABBING EITHER FIRST OR LAST RESTAURANT FROM ARRAY WITH CONDITIONS TO SEE WHICH DIV CONTAINER IT'S GOING TO
 function grabPortion(data, side) {
   let leftRestaurant = data.shift()
   // console.log(leftRestaurant)
   let rightRestaurant = data.pop()
   if (side === 'left') {
-    renderRestaurant(leftRestaurant, 'left')
-    // function remove ivoke
     removeRestaurant('left')
+    renderRestaurant(leftRestaurant, 'left')
+
   } else if (side === 'right') {
-    renderRestaurant(rightRestaurant, 'right')
-    // function remove invoke
     removeRestaurant('right')
+    renderRestaurant(rightRestaurant, 'right')
+
   } else {
     renderRestaurant(leftRestaurant, 'left')
     renderRestaurant(rightRestaurant, 'right')
@@ -60,7 +60,7 @@ function grabPortion(data, side) {
 
 
 
-
+// BUTTONS- WHEN 'THIS' IS PRESSED, RIGHT DIV REMOVES AND POPULATES NEXT RENDERRESTAURANT  
 function buttons() {
   let thisButton = document.querySelector('#leftThis')
   if (thisButton) {
@@ -131,11 +131,9 @@ function removeRestaurant(side) {
   }
 }
 
-// AFTER EVENT LISTENER, THIS WOULD BE FUNCTION FOR 'THIS' BUTTON
+
 getData()
 
-// AFTER EVENT LISTENER, THIS WOULD BE FUNCTION FOR 'THAT' BUTTON
-// getData()
 
 
 
