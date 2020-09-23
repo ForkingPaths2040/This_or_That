@@ -1,11 +1,3 @@
-// Need to know Austin city_id = 278
-// grab the city id
-// that chains to another url request (establishments?)
-// returns two results
-// remove one result based of a button action
-// re-generate the establishment url request but to only return one result
-// no longer pulls request after 10 decisions
-// once the 10 decision has been hit-last decision will be shown
 
 // FUNCTION THAT WILL GET RESTAURANT OBJECTS AND APPEND TO DOM
 // ARGUMENTS: WHICH DIV CONTAINER AND WHICH DATA ARRAY TO USE
