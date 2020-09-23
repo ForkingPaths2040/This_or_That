@@ -9,12 +9,11 @@
   height: 768px;;
   background-color: #ffd83d;
 }
-.box{
-  display: inline-block;
-}
 
 .big-box{
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
 }
 
 img{

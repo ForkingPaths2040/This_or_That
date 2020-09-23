@@ -46,9 +46,11 @@ function grabPortion(data, side) {
   if (side === 'left') {
     renderRestaurant(leftRestaurant, 'left')
     // function remove ivoke
+    removeRestaurant('left')
   } else if (side === 'right') {
     renderRestaurant(rightRestaurant, 'right')
     // function remove invoke
+    removeRestaurant('right')
   } else {
     renderRestaurant(leftRestaurant, 'left')
     renderRestaurant(rightRestaurant, 'right')
@@ -100,17 +102,34 @@ function renderRestaurant(restaurant, side = null) {
   let howExpensive = restaurant.price
   price.innerHTML = `The average price : ${howExpensive}`
   // switch statement?
+  switch (howExpensive) {
+    case "1":
+      howExpensive = '$';
+      break;
+    case "2":
+      howExpensive = '$$';
+      break;
+    case "3":
+      howExpensive = '$$$';
+      break;
+    case "4":
+      howExpensive = '$$$$'
+  }
   box.appendChild(price)
   // PHONE NUMBER
   let phone = document.createElement('li')
-  phone.innerHTML = `Hours : ${restaurant.phone}`
+  phone.innerHTML = `Phone number : ${restaurant.phone}`
   box.appendChild(phone)
-
-  // Invoke buttons functions
 
 }
 
-
+// FUNCTION REMOVES RENDER RESTAURANT 
+function removeRestaurant(side) {
+  const removeDiv = document.querySelector(`#${side}`)
+  while (removeDiv.lastChild) {
+    removeDiv.removeChild(removeDiv.lastChild)
+  }
+}
 
 // AFTER EVENT LISTENER, THIS WOULD BE FUNCTION FOR 'THIS' BUTTON
 getData()
