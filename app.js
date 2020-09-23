@@ -9,74 +9,108 @@
 
 // FUNCTION THAT WILL GET RESTAURANT OBJECTS AND APPEND TO DOM
 // ARGUMENTS: WHICH DIV CONTAINER AND WHICH DATA ARRAY TO USE
+let side = null
+let response
+
 async function getData() {
   try {
     const res = await axios({
       method: 'get',
-      url: 'https://developers.zomato.com/api/v2.1/search?entity_id=278&entity_type=city&count=20&collection_id=1',
-      headers: {
-        'user-key': 'd2595947349326ccfb5c1ce5e27e77b2'
-      }
+      url: 'https://opentable.herokuapp.com/api/restaurants?city=Austin',
+      // headers: {
+      //   // 'user-key': 'd2595947349326ccfb5c1ce5e27e77b2'
+      //   'user-key': '1a8f0e43e1498520ad37f2b7b29ee3af'
+      // }
     });
     // STORED GET RESPONSE
-    const response = res.data.restaurants
+    response = res.data.restaurants
+
     console.log(response)
+
     // CALL FUNCTION TO PASS RESPONSE DATA
     grabPortion(response)
+    buttons()
+
 
   } catch (err) {
     console.error(err)
   }
 }
-let thisButton = document.querySelector('#leftThis')
-thisButton.addEventListener('click', grabPortion(data, 'right'))
-
-let thatButton = document.querySelector('#rightThat')
-thatButton.addEventListener('click', grabPortion(data, 'left'))
 
 
-
-// FUNCTION TO GRAB A PORTION OF 'RESPONSE' WHILE ALSO CALLING RENDERDATA
+// BEFORE RENDERRESTAURANT CODE IS SOLID -> PROGRESSING THROUGH CHECKING THE REST
 function grabPortion(data, side) {
   let leftRestaurant = data.shift()
+  // console.log(leftRestaurant)
   let rightRestaurant = data.pop()
-  if ((data === leftRestaurant) && (side === 'left')) {
+  if (side === 'left') {
     renderRestaurant(leftRestaurant, 'left')
-  } else if ((data === rightRestaurant) && (side === 'right')) {
+    // function remove ivoke
+  } else if (side === 'right') {
     renderRestaurant(rightRestaurant, 'right')
-  } else if (((data === leftRestaurant) || (data === rightRestaurant)) && (side === null)) {
+    // function remove invoke
+  } else {
     renderRestaurant(leftRestaurant, 'left')
     renderRestaurant(rightRestaurant, 'right')
   }
-
 }
 
+
+
+
+
+function buttons() {
+  let thisButton = document.querySelector('#leftThis')
+  if (thisButton) {
+    thisButton.addEventListener('click', () => {
+      grabPortion(response, 'right')
+    })
+  }
+
+  let thatButton = document.querySelector('#rightThat')
+  if (thatButton) {
+    thatButton.addEventListener('click', () => {
+      grabPortion(response, 'left')
+    })
+  }
+}
+
+
+
 // FUNCTION THAT TAKES CAPTURED DATA FROM STORED VARIABLE AND APPENDS TO DOM
-function renderRestaurant(restaurant, side) {
+function renderRestaurant(restaurant, side = null) {
   let box = document.querySelector(`#${side}`)
+  // let box = document.querySelector(`.box`)
 
   // NAME OF RESTAURANT
   let name = document.createElement('h3')
-  name.textContent = `${restaurant.restaurant.name}`
+  name.textContent = `${restaurant.name}`
   box.appendChild(name)
   // IMG OF RESTAURANT
   let image = document.createElement('img')
-  image.src = restaurant.restaurant.featured_image
+  image.src = restaurant.image_url
   box.appendChild(image)
 
-  // CUISINE TYPE
-  let cuisine = document.createElement('li')
-  cuisine.innerHTML = `Cuisine : ${restaurant.restaurant.cuisines}`
-  box.appendChild(cuisine)
+  // ADDRESS
+  let address = document.createElement('li')
+  address.innerHTML = `Address : ${restaurant.address}`
+  box.appendChild(address)
   // AVERAGE COST OF 2
-  let cost = document.createElement('li')
-  cost.innerHTML = `Average cost for two: $${restaurant.restaurant.average_cost_for_two}`
-  box.appendChild(cost)
-  // HOURS OF OPERATION
-  let timings = document.createElement('li')
-  timings.innerHTML = `Hours : ${restaurant.restaurant.timings}`
-  box.appendChild(timings)
+  let price = document.createElement('li')
+  let howExpensive = restaurant.price
+  price.innerHTML = `The average price : ${howExpensive}`
+  // switch statement?
+  box.appendChild(price)
+  // PHONE NUMBER
+  let phone = document.createElement('li')
+  phone.innerHTML = `Hours : ${restaurant.phone}`
+  box.appendChild(phone)
+
+  // Invoke buttons functions
+
 }
+
+
 
 // AFTER EVENT LISTENER, THIS WOULD BE FUNCTION FOR 'THIS' BUTTON
 getData()
