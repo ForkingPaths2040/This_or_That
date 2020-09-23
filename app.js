@@ -15,7 +15,7 @@ async function getData() {
       // }
     });
     // STORED GET RESPONSE
-    response = res.data.restaurants
+    response = res.data.restaurants.slice(0, 7)
 
     console.log(response)
 
@@ -35,18 +35,23 @@ function grabPortion(data, side) {
   let leftRestaurant = data.shift()
   // console.log(leftRestaurant)
   let rightRestaurant = data.pop()
-  if (side === 'left') {
-    removeRestaurant('left')
-    renderRestaurant(leftRestaurant, 'left')
+  if (leftRestaurant && rightRestaurant) {
+    if (side === 'left') {
+      removeRestaurant('left')
+      renderRestaurant(leftRestaurant, 'left')
 
-  } else if (side === 'right') {
-    removeRestaurant('right')
-    renderRestaurant(rightRestaurant, 'right')
+    } else if (side === 'right') {
+      removeRestaurant('right')
+      renderRestaurant(rightRestaurant, 'right')
 
+    } else {
+      renderRestaurant(leftRestaurant, 'left')
+      renderRestaurant(rightRestaurant, 'right')
+    }
   } else {
-    renderRestaurant(leftRestaurant, 'left')
-    renderRestaurant(rightRestaurant, 'right')
+    alert('Congrats')
   }
+
 }
 
 
