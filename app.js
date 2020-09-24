@@ -50,8 +50,12 @@ function grabPortion(data, side) {
     }
   } else {
     if (side = 'left') {
+      removeRestaurant('left')
+
       alert(`By process of elimination, ${leftRestaurant.name} is your destination for today!`)
     } else if (side = 'right') {
+      removeRestaurant('right')
+      renderRestaurant(rightRestaurant, 'right')
       alert(`By process of elimination, ${rightRestaurant.name} is your destination for today!`)
     } else {
       alert('There no other restaurants to review')
