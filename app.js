@@ -5,21 +5,22 @@
 // ARGUMENTS: WHICH DIV CONTAINER AND WHICH DATA ARRAY TO USE
 let side = null
 let response
+let image
 
 async function getData() {
   try {
     const res = await axios({
       method: 'get',
-      url: 'https://opentable.herokuapp.com/api/restaurants?city=Austin',
-      // headers: {
-      //   // 'user-key': 'd2595947349326ccfb5c1ce5e27e77b2'
-      //   'user-key': '1a8f0e43e1498520ad37f2b7b29ee3af'
-      // }
+      url: 'https://developers.zomato.com/api/v2.1/search?entity_id=278&entity_type=city&count=20&collection_id=1',
+      headers: {
+        'user-key': 'd2595947349326ccfb5c1ce5e27e77b2'
+        //   'user-key': '1a8f0e43e1498520ad37f2b7b29ee3af'
+      }
     });
     // STORED GET RESPONSE
-    response = res.data.restaurants.slice(0, 7)
+    response = res.data.restaurants.splice(0, 17)
 
-    console.log(response)
+    // console.log(response)
 
     // CALL FUNCTION TO PASS RESPONSE DATA
     grabPortion(response)
@@ -96,43 +97,33 @@ function renderRestaurant(restaurant, side = null) {
 
   // NAME OF RESTAURANT
   let name = document.createElement('h3')
-  name.textContent = `${restaurant.name}`
+  name.textContent = `${restaurant.restaurant.name}`
   box.appendChild(name)
   // IMG OF RESTAURANT
   let image = document.createElement('img')
-  image.src = restaurant.image_url
+  if (restaurant.restaurant.featured_image) {
+    image.src = restaurant.restaurant.featured_image
+  } else {
+    image.src = "/Users/hub/Desktop/General_Assembly/projects/project-Unit_1/This_or_That/noimage.png"
+  }
   box.appendChild(image)
 
-  // ADDRESS
-  let address = document.createElement('li')
-  address.className = 'items'
-  address.innerHTML = `Address : ${restaurant.address}`
-  box.appendChild(address)
+  // CUISINES
+  let cuisines = document.createElement('li')
+  cuisines.className = 'items'
+  cuisines.innerHTML = `Cuisines: ${restaurant.restaurant.cuisines}`
+  box.appendChild(cuisines)
   // AVERAGE COST OF 2
   let price = document.createElement('li')
-  let howExpensive = restaurant.price
   price.className = 'items'
-  price.innerHTML = `The average price : ${howExpensive}`
+  price.innerHTML = `The average price for two: $${restaurant.restaurant.average_cost_for_two}`
   // switch statement?
-  switch (howExpensive) {
-    case "1":
-      howExpensive = '$';
-      break;
-    case "2":
-      howExpensive = '$$';
-      break;
-    case "3":
-      howExpensive = '$$$';
-      break;
-    case "4":
-      howExpensive = '$$$$'
-  }
   box.appendChild(price)
-  // PHONE NUMBER
-  let phone = document.createElement('li')
-  phone.className = 'items'
-  phone.innerHTML = `Phone number : ${restaurant.phone}`
-  box.appendChild(phone)
+  // TIMINGS
+  let timings = document.createElement('li')
+  timings.className = 'items'
+  timings.innerHTML = `Hours: ${restaurant.restaurant.timings}`
+  box.appendChild(timings)
 
 }
 
