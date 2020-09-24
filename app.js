@@ -103,11 +103,13 @@ function renderRestaurant(restaurant, side = null) {
 
   // ADDRESS
   let address = document.createElement('li')
+  address.className = 'items'
   address.innerHTML = `Address : ${restaurant.address}`
   box.appendChild(address)
   // AVERAGE COST OF 2
   let price = document.createElement('li')
   let howExpensive = restaurant.price
+  price.className = 'items'
   price.innerHTML = `The average price : ${howExpensive}`
   // switch statement?
   switch (howExpensive) {
@@ -126,6 +128,7 @@ function renderRestaurant(restaurant, side = null) {
   box.appendChild(price)
   // PHONE NUMBER
   let phone = document.createElement('li')
+  phone.className = 'items'
   phone.innerHTML = `Phone number : ${restaurant.phone}`
   box.appendChild(phone)
 
