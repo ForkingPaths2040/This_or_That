@@ -23,7 +23,7 @@ body{
   flex-flow: row;
   justify-content: space-evenly;
   position: relative;
-  top: 50px;
+  top: 30px;
 }
 
 .button{
@@ -57,13 +57,13 @@ h1, p{
 
 img{
   display: block;
-  max-width: 300px;
+  width: 300px;
   margin: 15px auto;
   justify-content: center;
 }
 
 footer{
-  position: absolute;
+  position: fixed;
   left: 0px;
   bottom: 0px;
   width: 100%;
@@ -93,32 +93,4 @@ footer p{
 
 
 
-/* .box{
-  padding: 10px;
-}
-
-.button-div{
-  position: relative;
-  width: 414px;
-}
-.button{
-  position: absolute;
-  display: inline-block;
-}
-p{
-  text-align: center;
-}
-
-
-
-div#this{
-  margin: 50px 300px;
-}
-div#that{
-  margin: 50px 725px;
-}
-
-
-
- */
 
