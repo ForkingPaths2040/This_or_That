@@ -117,7 +117,6 @@ function renderRestaurant(restaurant, side = null) {
   let price = document.createElement('li')
   price.className = 'items'
   price.innerHTML = `The average price for two: $${restaurant.restaurant.average_cost_for_two}`
-  // switch statement?
   box.appendChild(price)
   // TIMINGS
   let timings = document.createElement('li')
