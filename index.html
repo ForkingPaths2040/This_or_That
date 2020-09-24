@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="mobile.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -13,33 +14,42 @@
 </head>
 
 <body>
+  <h1 id='title' class='center'> This or That!</h1>
+  <p>"Who knew the most taxing part of being an adult is trying to figure out what the fuck to have for dinner every
+    goddamn night until you die." -<a href="https://mobile.twitter.com/urbanhymnal?lang=en"
+      target="_blank">Urbanhymnal</a>
+  </p>
   <div class="main-container">
-    <h1 id='title' class='center'> This or That!</h1>
-    <p>"Who knew the most taxing part of being an adult is trying to figure out what the fuck to have for dinner every
-      goddamn night until you die."
-      <br>
-      -<a href="https://mobile.twitter.com/urbanhymnal?lang=en" target="_blank">Urbanhymnal</a>
-    </p>
     <br>
     <br>
     <!-- CONTAINER HOLDS BOTH RESTAURANT REQUESTS -->
     <div class="big-box">
-      <!-- LEFT CONTAINER THAT HAS LEFT RESTAURANT  -->
-      <div id="left" class="box">
 
-      </div>
+      <!-- LEFT CONTAINER THAT HAS LEFT RESTAURANT  -->
+      <div id="left" class="box"></div>
+
 
       <!-- RIGHT CONTAINER THAT HAS RIGHT RESTAURANT -->
-      <div id="right" class=box>
+      <div id="right" class=box></div>
 
-      </div>
+
     </div>
-    <!-- CONTAINER FOR BUTTONS -->
-    <div class="button-div">
-      <div id="this" class="button"><button id="leftThis" class="button">This</button></div>
-      <div id="that" class="button"><button id="rightThat" class="button">That</button></div>
+    <div class="div-button">
+      <!-- THIS CONTAINER WITH BUTTON -->
+      <button id="leftThis" class="button">This</button>
+
+      <!-- THAT CONTAINER WITH BUTTON -->
+      <button id="rightThat" class="button">That</button>
+
     </div>
   </div>
+  <a href="https://www.opentable.com/s?dateTime=2020-09-24T19%3A00%3A00&covers=2&metroId=33&regionIds%5B0%5D=65&neighborhoodIds%5B0%5D=556&latitude=30.266283&longitude=-97.74568"
+    target="_blank">
+    <footer>
+      <p>...more</p>
+
+    </footer>
+  </a>
 </body>
 
 </html>

@@ -1,3 +1,30 @@
-@media (min-width: 375px){
-  
+@media screen and (max-width: 375px){
+  #title{
+    text-align: center;
+    font-size: 6em;
+    margin-top: 30px;
+  }
+  p{
+    font-size: 2.5em;
+    overflow-wrap: break-word;
+    text-align: center;
+    margin: 10px 20px;
+  }
+  .main-container{
+    display: flex;
+    flex-direction: row;
+
+  }
+  .big-box{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+  }
+
+  .div-button{
+    display: flex;
+    flex-direction: column;
+  }
+
+
 }
