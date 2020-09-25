@@ -85,7 +85,32 @@ https://developers.zomato.com/api/v2.1/cities?q=Austin%2C%20TX
 
 ## Code Snippet
 
-TBD  
+```
+if (leftRestaurant || rightRestaurant) {
+    if (side === 'left') {
+      removeRestaurant('left')
+      renderRestaurant(leftRestaurant, 'left')
+
+    } else if (side === 'right') {
+      removeRestaurant('right')
+      renderRestaurant(rightRestaurant, 'right')
+
+    } else {
+      renderRestaurant(leftRestaurant, 'left')
+      renderRestaurant(rightRestaurant, 'right')
+    }
+  } else {
+    if (side = 'left') {
+      removeRestaurant('left')
+      // alert(`By process of elimination, ${rightRestaurant.name} is your destination for today!`)
+    } else if (side = 'right') {
+      removeRestaurant('right')
+      // alert(`By process of elimination, ${leftRestaurant.name} is your destination for today!`)
+    } else {
+      alert('There are no other restaurants to review')
+    }
+  }
+  ```
 
 
 
