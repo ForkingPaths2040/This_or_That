@@ -60,6 +60,7 @@
 
 img{
   width: 600px;
+  border-radius: 25px;
 }
 
 .box>h3{

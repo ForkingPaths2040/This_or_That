@@ -63,6 +63,11 @@ img{
   width: 300px;
   margin: 15px auto;
   justify-content: center;
+  border-radius: 15px;
+}
+
+a:hover{
+  cursor : pointer;
 }
 
 footer{
