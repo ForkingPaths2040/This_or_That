@@ -41,7 +41,7 @@ https://developers.zomato.com/api/v2.1/cities?q=Austin%2C%20TX
 
 #### PostMVP  
 
-- like button to save restaurants for later viewing
+- import a font
 - dynamic mouseovers - let the user know whats clickable
 
 ## Project Schedule
@@ -64,13 +64,24 @@ https://developers.zomato.com/api/v2.1/cities?q=Austin%2C%20TX
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Skeleton of HTML | H | 1hr| N/A| N/A |
-| Adding Location Input that pulls first get request | H | 3hrs| N/A | N/A |
-| Returning two results from  initial get request | H | 3 hrs | N/A | N/A|
-| Pushing captured "Img, Cuisine, Hours and Cost" to the DOM | H | 3 hrs | N/A | N/A |
-| Ensuring "This or That"buttons function by keeping or removing added DOM elements | H | 3 hrs | N/A | N/A |
-| Style elements | M | 3 hrs | N/A | N/A |
-| Total | H | 16hrs| N/A | N/A |
+| Project setup | H | 0.5 hr | 0.5 hr | 0.5 hr |
+| Skeleton of HTML | H | 1hr| | 0.5 hr | 1 hr|
+| Implementing API Key| H |  0.5 hr | 2.5 hr | 4 hr |
+| Change Log (1) | M  | 1hr | 1 hr | 5hr |
+| Returning response from  initial get request and playing with data| H | 3 hrs | 3 hrs| 8 hrs|
+| Whiteboarding | H | 0.75 hr | 2 hr | 9.5 hrs |
+| Variables/ 2 functions / Pushing captured "Img, Cuisine, Hours and Cost" to the DOM | H | 3 hrs | 3 hrs | 12.5 hrs |
+| Change log (2,3) | H |  0.5 hr | 4 hrs | 16.5 hrs |
+| Ensuring "This or That" buttons function by keeping or removing added DOM elements | H | 3 hrs | 10 hrs | 26.5 hrs |
+  | Chain method functions | 3 hrs |  
+  | Expanding grabPortion function | 3 hrs |
+  | If/Else logics | 3 hrs |   
+  | Remove function | 1 hrs |   
+| Style main elements | M | 3 hrs | 8 hrs | 34.5 hrs |
+| Style mobile elements | H |  3 hrs | 3 hrs | 37.5 hrs |
+| Troubleshooting and Research/Learn | H | 8 Hrs | 8 hrs| 45.5 hrs|
+| Switching API and refactor dot notation- Change Log (3)| H | 0.5 hr |  2.5 hours | 47 hrs |
+| Total | H | 16 hrs| 41.5 hrs | 47 hrs |
 
 ## Code Snippet
 
@@ -79,4 +90,15 @@ TBD
 
 
 ## Change Log
- TBD
+ 1. Zomato API needed stacked info to pull restaurant info. Project was tailored to fit an Austin, TX user. Wireframe doesn't reflect this change.
+
+2.  Zomato API was broken (maybe maintainance) switched to OpenTable API.
+
+3.  OpenTable API was hosted through 3rd party that the version was outdated from original API.
+
+4.  Some image urls don't exist in API, inserted a placeholding image instead.
+
+5.  Footer was added to balance the design. Wireframe doesn't reflect change.
+
+
+
