@@ -99,7 +99,7 @@ function renderRestaurant(restaurant, side = null) {
   if (restaurant.restaurant.featured_image) {
     image.src = restaurant.restaurant.featured_image
   } else {
-    image.src = "./noimage.png"
+    image.src = "https://yanktontrailers.com/wp-content/uploads/2020/02/noimage.png"
   }
   box.appendChild(image)
 
