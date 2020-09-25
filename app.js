@@ -99,7 +99,7 @@ function renderRestaurant(restaurant, side = null) {
   if (restaurant.restaurant.featured_image) {
     image.src = restaurant.restaurant.featured_image
   } else {
-    image.src = "/Users/hub/Desktop/General_Assembly/projects/project-Unit_1/This_or_That/noimage.png"
+    image.src = "./noimage.png"
   }
   box.appendChild(image)
 
